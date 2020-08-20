@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">My Wine Cellar</string>
+    <string name="aucun_vin_ajoute">Vous n\'avez pas encore ajouter de vin</string>
+    <string name="ajouter_un_vin">Ajouter un vin</string>
+    <string name="producteur">Producteur</string>
+    <string name="pays">Pays</string>
+    <string name="region">Région</string>
+    <string name="appellation">Appellation</string>
+    <string name="parcelle">Parcelle</string>
+    <string name="millesime">Millésime</string>
+    <string name="quantite">Quantité</string>
+    <string name="prix_de_la_bouteille">Prix de la bouteille</string>
+    <string name="date_d_acquisition">Date d\'acquisition</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="couleur">Couleur</string>
+    <string name="moyen_d_acquisition">Moyen d\'acquisition</string>
+    <string-array name="vin_couleur">
+        <item>Rouge</item>
+        <item>Blanc</item>
+        <item>Rosé</item>
+    </string-array>
+    <string-array name="moyen_acquisition">
+        <item>Achat chez le producteur</item>
+        <item>Achat chez un caviste</item>
+        <item>Achat en grande surface</item>
+        <item>Achat sur Internet</item>
+        <item>Achat sur une foire</item>
+        <item>Cadeau</item>
+    </string-array>
+</resources>
