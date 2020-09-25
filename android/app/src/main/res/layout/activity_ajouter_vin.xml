@@ -1,317 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="12dp"
-        tools:context=".AjouterVinActivity">
+        >
 
-    <androidx.core.widget.NestedScrollView android:id="@+id/scrollView_formulaire"
+    <data>
+
+        <variable
+                name="vin"
+                type="com.shareitcode.mywinecellar.models.Vin"/>
+    </data>
+
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-        <!-- Entrées utilisateurs -->
-        <RelativeLayout
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="12dp">
+
+
+        <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollView_formulaire"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <!-- Producteur -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_producteur"
-                    android:orientation="vertical"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            <!-- Entrées utilisateurs -->
+            <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp">
-
-                <TextView
+                    android:layout_height="wrap_content">
+                <!-- Producteur -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_producteur"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_producteur"
-                        android:text="@string/producteur"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
+                        android:layout_marginBottom="12dp">
 
-                <EditText
-                        android:id="@+id/editText_producteur"
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_producteur"
+                            android:text="@string/producteur"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                    <EditText
+                            android:id="@+id/editText_producteur"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/producteur"
+                            android:inputType="text"
+                            android:paddingTop="4dp"
+                            android:text="@={vin.producteur}"/>
+                </LinearLayout>
+
+                <!-- Pays -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_pays"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/producteur"
-                        android:inputType="text"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
+                        android:layout_below="@+id/linearLayout_producteur"
+                        android:layout_marginBottom="12dp">
 
-            <!-- Pays -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_pays"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_producteur"
-                    android:layout_marginBottom="12dp">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_pays"
+                            android:text="@string/pays"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
 
-                <TextView
+                    <EditText
+                            android:id="@+id/editText_pays"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pays"
+                            android:inputType="text"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Région -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_region"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_pays"
-                        android:text="@string/pays"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
+                        android:layout_below="@+id/linearLayout_pays"
+                        android:layout_marginBottom="12dp">
 
-                <EditText
-                        android:id="@+id/editText_pays"
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_region"
+                            android:text="@string/region"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                    <EditText
+                            android:id="@+id/editText_region"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/region"
+                            android:inputType="text"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Appellation -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_appellation"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/pays"
-                        android:inputType="text"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
+                        android:layout_below="@+id/linearLayout_region"
+                        android:layout_marginBottom="12dp">
 
-            <!-- Région -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_region"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_pays"
-                    android:layout_marginBottom="12dp">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_appellation"
+                            android:text="@string/appellation"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
 
-                <TextView
+                    <EditText
+                            android:id="@+id/editText_appellation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/appellation"
+                            android:inputType="text"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Parcelle -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_parcelle"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_region"
-                        android:text="@string/region"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
+                        android:layout_below="@+id/linearLayout_appellation"
+                        android:layout_marginBottom="12dp">
 
-                <EditText
-                        android:id="@+id/editText_region"
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_parcelle"
+                            android:text="@string/parcelle"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                    <EditText
+                            android:id="@+id/editText_parcelle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/parcelle"
+                            android:inputType="text"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Millésime -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_millesime"
+                        android:orientation="vertical"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearLayout_parcelle"
+                        android:layout_alignParentStart="true"
+                        android:layout_toEndOf="@+id/linearLayout_quantite"
+                        android:layout_marginBottom="12dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_millesime"
+                            android:text="@string/millesime"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                    <EditText
+                            android:id="@+id/editText_millesime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/millesime"
+                            android:inputType="numberSigned"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Quantité -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_quantite"
+                        android:orientation="vertical"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearLayout_parcelle"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="12dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_quantite"
+                            android:text="@string/quantite"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                    <EditText
+                            android:id="@+id/editText_quantite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/quantite"
+                            android:inputType="numberSigned"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Couleur -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_couleur"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/region"
-                        android:inputType="text"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
+                        android:layout_below="@id/linearLayout_quantite"
+                        android:layout_marginBottom="12dp">
 
-            <!-- Appellation -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_appellation"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_region"
-                    android:layout_marginBottom="12dp">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_couleur"
+                            android:text="@string/couleur"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
 
-                <TextView
+                    <Spinner
+                            android:id="@+id/spinner_couleur"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown"
+                            android:minHeight="40dp"/>
+                </LinearLayout>
+
+                <!-- Prix -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_prix"
+                        android:orientation="vertical"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearLayout_couleur"
+                        android:layout_alignParentStart="true"
+                        android:layout_toEndOf="@+id/linearLayout_quantite"
+                        android:layout_marginBottom="12dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/editText_prix"
+                            android:text="@string/prix_de_la_bouteille"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                    <EditText
+                            android:id="@+id/editText_prix"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/prix_de_la_bouteille"
+                            android:inputType="numberDecimal"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Date d'acquisition -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_date_acquisition"
+                        android:orientation="vertical"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearLayout_couleur"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="12dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/datePicker_date_acquisition"
+                            android:text="@string/date_d_acquisition"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                    <EditText
+                            android:id="@+id/datePicker_date_acquisition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/date_d_acquisition"
+                            android:inputType="date"
+                            android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Moyen d'acquisition -->
+                <LinearLayout
+                        android:id="@+id/linearLayout_moyen_acquisition"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_appellation"
-                        android:text="@string/appellation"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
+                        android:layout_below="@id/linearLayout_date_acquisition"
+                        android:layout_marginBottom="12dp">
 
-                <EditText
-                        android:id="@+id/editText_appellation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/appellation"
-                        android:inputType="text"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/spinner_moyen_acquisition"
+                            android:text="@string/moyen_d_acquisition"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
 
-            <!-- Parcelle -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_parcelle"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_appellation"
-                    android:layout_marginBottom="12dp">
+                    <Spinner
+                            android:id="@+id/spinner_moyen_acquisition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown"
+                            android:minHeight="40dp"/>
 
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_parcelle"
-                        android:text="@string/parcelle"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
 
-                <EditText
-                        android:id="@+id/editText_parcelle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/parcelle"
-                        android:inputType="text"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
+        <Button
+                android:id="@+id/button_ajouter"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="@string/ajouter"/>
 
-            <!-- Millésime -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_millesime"
-                    android:orientation="vertical"
-                    android:layout_width="184dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_parcelle"
-                    android:layout_alignParentStart="true"
-                    android:layout_toEndOf="@+id/linearLayout_quantite"
-                    android:layout_marginBottom="12dp">
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_millesime"
-                        android:text="@string/millesime"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
-
-                <EditText
-                        android:id="@+id/editText_millesime"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/millesime"
-                        android:inputType="numberSigned"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Quantité -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_quantite"
-                    android:orientation="vertical"
-                    android:layout_width="184dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_parcelle"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginBottom="12dp">
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_quantite"
-                        android:text="@string/quantite"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
-
-                <EditText
-                        android:id="@+id/editText_quantite"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/quantite"
-                        android:inputType="numberSigned"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Couleur -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_couleur"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/linearLayout_quantite"
-                    android:layout_marginBottom="12dp">
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_couleur"
-                        android:text="@string/couleur"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
-
-                <Spinner
-                        android:id="@+id/spinner_couleur"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:spinnerMode="dropdown"
-                        android:minHeight="40dp"/>
-            </LinearLayout>
-
-            <!-- Prix -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_prix"
-                    android:orientation="vertical"
-                    android:layout_width="184dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_couleur"
-                    android:layout_alignParentStart="true"
-                    android:layout_toEndOf="@+id/linearLayout_quantite"
-                    android:layout_marginBottom="12dp">
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@+id/editText_prix"
-                        android:text="@string/prix_de_la_bouteille"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
-
-                <EditText
-                        android:id="@+id/editText_prix"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/prix_de_la_bouteille"
-                        android:inputType="numberDecimal"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Date d'acquisition -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_date_acquisition"
-                    android:orientation="vertical"
-                    android:layout_width="184dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout_couleur"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginBottom="12dp">
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@+id/datePicker_date_acquisition"
-                        android:text="@string/date_d_acquisition"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
-
-                <EditText
-                        android:id="@+id/datePicker_date_acquisition"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/date_d_acquisition"
-                        android:inputType="date"
-                        android:paddingTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Moyen d'acquisition -->
-            <LinearLayout
-                    android:id="@+id/linearLayout_moyen_acquisition"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/linearLayout_date_acquisition"
-                    android:layout_marginBottom="12dp">
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@+id/spinner_moyen_acquisition"
-                        android:text="@string/moyen_d_acquisition"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
-
-                <Spinner
-                        android:id="@+id/spinner_moyen_acquisition"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:spinnerMode="dropdown"
-                        android:minHeight="40dp"/>
-
-            </LinearLayout>
-        </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
-
-    <Button
-            android:id="@+id/button_ajouter"
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:text="@string/ajouter"/>
-
-</LinearLayout>
+    </LinearLayout>
+</layout>
