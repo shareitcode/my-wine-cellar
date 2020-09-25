@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:layout_marginVertical="4dp"
+                android:layout_marginHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+
+    <TextView
+            android:id="@+id/textView_vin_appellation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"/>
+
+    <TextView
+            android:id="@+id/textView_vin_millesime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/textView_vin_appellation"/>
+
+    <TextView
+            android:id="@+id/textView_vin_quantite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|end"/>
+</RelativeLayout>

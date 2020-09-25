@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 /.idea/
+/app/schemas/com.shareitcode.mywinecellar.database.MyWineCellarDb/*.json
