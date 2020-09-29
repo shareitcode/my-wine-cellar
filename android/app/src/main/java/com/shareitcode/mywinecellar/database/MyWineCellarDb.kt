@@ -10,7 +10,7 @@ import com.shareitcode.mywinecellar.entities.Vin
 @Database(entities = [Vin::class], exportSchema = false, version = 1)
 abstract class MyWineCellarDb : RoomDatabase() {
 
-    abstract fun tousLesVinsDao(): VinDao
+    abstract fun vinDao(): VinDao
 
     companion object {
         @Volatile

@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.shareitcode.mywinecellar.adapters.ListeDesVinsAdapter
@@ -30,30 +29,14 @@ class ListeDesVinsActivity : AppCompatActivity(), ListeDesVinsAdapter.OnItemClic
 
 	private fun preparationDesDonnees() {
 		this.db = Room.databaseBuilder(applicationContext, MyWineCellarDb::class.java, "MyWineCellar").build()
-		this.setLaListeDesVinsAvecLesDonneesEnBase()
-		this.vins = generateMockData()
-	}
-
-	private fun setLaListeDesVinsAvecLesDonneesEnBase() {
 		GlobalScope.launch {
-			val vinsFromDatabase = db.tousLesVinsDao().tousLesVins
-			if (vinsFromDatabase.any()) {
-				for (vin in vinsFromDatabase) {
-					vins.add(vin)
-				}
-			}
+			setLaListeDesVinsAvecLesDonneesEnBase()
 		}
 	}
 
-	private fun generateMockData(): ArrayList<Vin> {
-		val vins = ArrayList<Vin>()
-		val vinUn = Vin(1, "", "", "", "Vin un", "", 2020, 1, "", 10.0, "")
-		val vinDeux = Vin(2, "", "", "", "Vin deux", "", 2020, 1, "", 10.0, "")
-		val vinTrois = Vin(3, "", "", "", "Vin trois", "", 2020, 1, "", 10.0, "")
-		vins.add(vinUn)
-		vins.add(vinDeux)
-		vins.add(vinTrois)
-		return vins
+	private fun setLaListeDesVinsAvecLesDonneesEnBase() {
+		val vinsFromDatabase = db.vinDao().tousLesVins
+		if (vinsFromDatabase.any()) for (vin in vinsFromDatabase) vins.add(vin)
 	}
 
 	private fun preparationComposantUtilisateur() {
@@ -64,7 +47,6 @@ class ListeDesVinsActivity : AppCompatActivity(), ListeDesVinsAdapter.OnItemClic
 	private fun setRecyclerViewAvecLesVins() {
 		if (this.vins.any()) {
 			this.recyclerView_vins.layoutManager = LinearLayoutManager(this.applicationContext)
-			this.recyclerView_vins.itemAnimator = DefaultItemAnimator()
 			this.recyclerView_vins.adapter = ListeDesVinsAdapter(this.vins, this)
 			this.recyclerView_vins.visibility = VISIBLE
 			this.textView_aucun_vin_ajoute.visibility = GONE

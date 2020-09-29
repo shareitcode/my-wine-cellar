@@ -2,16 +2,16 @@ package com.shareitcode.mywinecellar.models
 
 import java.util.*
 
-data class Vin(
-    var producteur: String,
-    var pays: String,
-    var region: String,
-    var appellation: String,
-    var parcelle: String,
-    var millesime: Int,
-    var quantite: Int,
-    var couleur: String,
-    var prix: Double,
-    var dateAcquisition: Date,
-    var moyenAcquisition: String
-)
+class Vin {
+    var producteur: String = ""
+    var pays: String = ""
+    var region: String = ""
+    var appellation: String = ""
+    var parcelle: String = ""
+    var millesime: Int = 0
+    var quantite: Int = 0
+    var couleur: String = ""
+    var prix: Double = 0.0
+    var dateAcquisition: Date = Date()
+    var moyenAcquisition: String = ""
+}

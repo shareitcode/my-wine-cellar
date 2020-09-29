@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 data class Vin (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_vin")
-    val idVin: Long,
+    val idVin: Long?,
 
     @ColumnInfo(name = "producteur_vin")
     val producteurVin: String,
@@ -37,7 +37,7 @@ data class Vin (
 
     @ColumnInfo(name = "prix_vin")
     val prixVin: Double,
-    
+
 // TODO: develop date converter for Room entity
 //  @ColumnInfo(name = "dateAcquisition_vin")
 //  val dateAcquisition: Date,
